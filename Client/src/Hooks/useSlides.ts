@@ -4,8 +4,6 @@ let status = "pending";
 let result: listPicturesResponse = [];
 
 export const useSlides = (slideLength: React.MutableRefObject<number>) => {
-  if (slideLength.current) return result;
-
   const process = fetcher<listPicturesResponse>(
     "https://rf5yig2ii5.execute-api.ap-northeast-1.amazonaws.com/prod/pictures"
   )

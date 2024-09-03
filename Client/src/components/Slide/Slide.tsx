@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useMemo } from "react";
 import { Box, Card, CardMedia } from "@mui/material";
 import { motion } from "framer-motion";
 import { useSlides } from "../../Hooks/useSlides";
@@ -14,7 +14,7 @@ export const Slide: FC<SlideProps> = ({
   animation,
   slideLength,
 }) => {
-  const slides = useSlides(slideLength);
+  const slides = useMemo(() => useSlides(slideLength), []);
 
   return (
     <motion.div animate={animation} transition={{ duration: 0.02 }}>
